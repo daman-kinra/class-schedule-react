@@ -5,6 +5,9 @@ export const data = createContext();
 const days = 10;
 const randomZeros = 4;
 export function Context(props) {
+  const [counter, setCounter] = useState(
+    Math.floor(Math.random() * (60 - 30) + 30)
+  );
   const [classes] = useState({
     Sunday: null,
     Monday: {
@@ -80,6 +83,17 @@ export function Context(props) {
     });
     setTotalSeats(total);
     setList(arr);
+
+    setInterval(() => {
+      setCounter((prev) => {
+        if (prev > 0) {
+          return prev - 1;
+        } else {
+          clearInterval(1);
+          return prev;
+        }
+      });
+    }, 1000);
   }, []);
 
   const addToCart = (index) => {
@@ -129,6 +143,7 @@ export function Context(props) {
         cart,
         removeFromCartById,
         totalSeats,
+        counter,
       }}
     >
       {props.children}

@@ -4,19 +4,26 @@ import Home from "./pages/Home";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Error from "./pages/Error";
+import Header from "./components/Header";
 function App() {
   return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/cart">
-        <Cart />
-      </Route>
-      <Route exact>
-        <Error />
-      </Route>
-    </Switch>
+    <>
+      <Header />
+      <div className="line">
+        <hr />
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route exact>
+          <Error />
+        </Route>
+      </Switch>
+    </>
   );
 }
 

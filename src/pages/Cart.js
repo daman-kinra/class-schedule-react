@@ -1,25 +1,15 @@
 import React, { useContext } from "react";
+import SingleTile from "../components/SingleTile";
+import TableHead from "../components/TableHead";
 import { data } from "../context/Context";
 
 function Cart() {
-  const { cart, removeFromCartById } = useContext(data);
+  const { cart } = useContext(data);
   return (
-    <div>
-      {cart.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>{`${item.subject}----------${item.time}--------${
-              item.seats
-            }-----${new Date(item.date).toLocaleDateString()}`}</p>
-            <button
-              onClick={() => {
-                removeFromCartById(item.id);
-              }}
-            >
-              Remove from cart
-            </button>
-          </div>
-        );
+    <div className="home">
+      <TableHead />
+      {cart.map((item, pos) => {
+        return <SingleTile item={item} pos={pos} key={pos} fromCart={true} />;
       })}
     </div>
   );
