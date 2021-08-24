@@ -2,8 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export const data = createContext();
-const days = 10;
-const randomZeros = 4;
+const days = 60;
+const randomZeros = 20;
 export function Context(props) {
   const [counter, setCounter] = useState(
     Math.floor(Math.random() * (60 - 30) + 30)
