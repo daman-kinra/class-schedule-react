@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SingleTile from "../components/SingleTile";
 import TableHead from "../components/TableHead";
 import { data } from "../context/Context";
 function Home() {
   const { list, totalSeats } = useContext(data);
+
   return (
     <>
       <div className="seats">

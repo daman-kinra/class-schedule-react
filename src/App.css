@@ -46,7 +46,7 @@ body {
   text-decoration: none;
   color: #595260;
 }
-.header .right a:nth-child(2) {
+.header .right a:nth-child(1) {
   text-decoration: underline;
 }
 .cart-box {
@@ -86,6 +86,7 @@ body {
   padding: 1rem 2.5rem;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3.5rem;
 }
 .seats {
   display: flex;

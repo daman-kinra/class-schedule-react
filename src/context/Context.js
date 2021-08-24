@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
+import swal from "sweetalert";
 export const data = createContext();
 const days = 60;
-const randomZeros = 20;
+const randomZeros = 30;
 export function Context(props) {
   const [counter, setCounter] = useState(
     Math.floor(Math.random() * (60 - 30) + 30)
@@ -98,7 +98,12 @@ export function Context(props) {
 
   const addToCart = (index) => {
     if (cart.length >= 3) {
-      alert("cart full");
+      swal({
+        title: "Cart Full",
+        text: "Maximum classes limit reached!",
+        icon: "warning",
+        button: "OK",
+      });
       return;
     }
     const arr = list;
